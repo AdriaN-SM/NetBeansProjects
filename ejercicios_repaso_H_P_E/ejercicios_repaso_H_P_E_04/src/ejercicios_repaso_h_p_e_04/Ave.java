@@ -10,20 +10,5 @@ package ejercicios_repaso_h_p_e_04;
  * @author adria
  */
 public abstract class Ave extends Mascotas {
-
-    String pico;
-    Boolean vuela;
     
-    
-    @Override
-    public void mostrar() {
-        
-    }
-
-    @Override
-    public void habla() {
-        
-    }
-    
-    public abstract void volar();
 }
