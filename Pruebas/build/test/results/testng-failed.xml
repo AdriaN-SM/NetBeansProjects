@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Pruebas]">
+  <test name="debuged.testsuit suite(failed)">
+    <classes>
+      <class name="debuged.valoresLimite.NumeroParTest">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="testEsPar"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- debuged.valoresLimite.NumeroParTest -->
+      <class name="debuged.valoresLimite.NumeroPrimoNGTest">
+        <methods>
+          <include name="tearDownMethod"/>
+          <include name="setUpClass"/>
+          <include name="tearDownClass"/>
+          <include name="setUpMethod"/>
+        </methods>
+      </class> <!-- debuged.valoresLimite.NumeroPrimoNGTest -->
+    </classes>
+  </test> <!-- debuged.testsuit suite(failed) -->
+</suite> <!-- Failed suite [Pruebas] -->
