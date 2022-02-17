@@ -10,12 +10,22 @@ package ejercicios_repaso_h_p_e_04;
  * @author adria
  */
 public abstract class Mascotas {
+    
     String nombre;
     int edad;
     String estado;
     String fechaNac;
     
     
+    public abstract void mostrar();
+    public abstract void habla();
     
+    public void cumpleaños() {
+        
+    }
+    
+    public void estaEnInv() {
+        
+    }
     
 }
