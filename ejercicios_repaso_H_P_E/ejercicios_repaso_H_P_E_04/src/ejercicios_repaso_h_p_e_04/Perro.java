@@ -10,5 +10,23 @@ package ejercicios_repaso_h_p_e_04;
  * @author adria
  */
 public class Perro extends Mascotas {
+
+    String raza;
+    Boolean pulgas;
+    
+    
+    @Override
+    public void mostrar() {
+        
+    }
+
+    @Override
+    public void habla() {
+        
+    }
+    
+    public void tienePulgas() {
+        
+    }
     
 }
