@@ -14,9 +14,10 @@ public abstract class Mascotas {
     String nombre;
     int edad;
     String estado;
-    String fechaNac;
+    final String fechaNac;
     //Constructor vacío
     public Mascotas() {
+        fechaNac = null;
     }
     //Constructor con todos los atributos
     public Mascotas(String nombre, int edad, String estado, String fechaNac) {
@@ -35,6 +36,34 @@ public abstract class Mascotas {
     
     public void estaEnInv() {
         
+    }
+    //Getters
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public String getFechaNac() {
+        return fechaNac;
+    }
+    //Setters
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
     
 }
