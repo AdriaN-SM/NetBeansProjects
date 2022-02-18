@@ -16,8 +16,8 @@ public class Perro extends Mascotas {
     
     
     //Constructor
-    public Perro(String raza, Boolean pulgas, String nombre, int edad, 
-                 String estado, String fechaNac) {
+    public Perro(String nombre, int edad, String estado, String fechaNac,
+                 String raza, Boolean pulgas) {
         super(nombre, edad, estado, fechaNac);
         this.raza = raza;
         this.pulgas = pulgas;
