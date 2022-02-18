@@ -30,12 +30,17 @@ public abstract class Mascotas {
     public abstract void mostrar();
     public abstract void habla();
     //Métodos
-    public void cumpleaños() {
-        
+    public int cumpleaños() {
+        return edad+1;
     }
     
-    public void estaEnInv() {
-        
+    public boolean estaEnInv() {
+        if (estado.equals("Tienda")) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
     //Getters
     public String getNombre() {
@@ -64,6 +69,21 @@ public abstract class Mascotas {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+    
+    //Sobrecarga de toString
+    public String toString() {
+        return "Nombre: " + nombre + " edad: " + edad + " estado: " +
+                estado + " fecha nacimiento: " + fechaNac;
+    }
+    //Sobrecarga de equals
+    public boolean equals(Mascotas m) {
+        if (nombre.equals(m.getNombre()) && edad == m.getEdad()) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
     
 }
