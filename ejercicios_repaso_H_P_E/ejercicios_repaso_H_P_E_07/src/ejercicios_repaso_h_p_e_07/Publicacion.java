@@ -11,4 +11,15 @@ package ejercicios_repaso_h_p_e_07;
  */
 public class Publicacion {
     
+    String codigo;
+    String titulo;
+    int añoPubli;
+
+    //Constructor con todos los atributos
+    public Publicacion(String codigo, String titulo, int añoPubli) {
+        this.codigo = codigo;
+        this.titulo = titulo;
+        this.añoPubli = añoPubli;
+    }
+        
 }
