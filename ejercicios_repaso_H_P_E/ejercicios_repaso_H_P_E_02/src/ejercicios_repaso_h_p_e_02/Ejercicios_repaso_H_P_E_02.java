@@ -35,7 +35,7 @@ public class Ejercicios_repaso_H_P_E_02 {
             System.out.println("Valor introducido: " + A);
         }
         catch(InputMismatchException ime) {
-            System.out.println("Valor introducido incorrecto");
+            System.err.println("Valor introducido incorrecto");
         }
         
         
