@@ -12,5 +12,5 @@ package ejercicios_repaso_h_p_e_07;
 public interface Prestable {
     public void prestar();
     public void devolver();
-    public void prestado();
+    public String prestado();
 }

@@ -14,8 +14,8 @@ public class Libro extends Publicacion implements Prestable {
     boolean prestado;
 
     //Constructor con toods los atributos
-    public Libro(String codigo, String titulo, int añoPubli) {
-        super(codigo, titulo, añoPubli);
+    public Libro(String codigo, String titulo, int agnoPubli) {
+        super(codigo, titulo, agnoPubli);
         this.prestado = false;
     }
     
@@ -34,13 +34,28 @@ public class Libro extends Publicacion implements Prestable {
     }
 
     @Override
-    public void prestado() {
+    public String prestado() {
         if (prestado) {
-            System.out.println("El libro ya está prestado.");
+            return "El libro está prestado.";
         }
         else {
-            System.out.println("El libro no está prestado.");
+            return "El libro no está prestado.";
         }
     }
+
+    //Sobreescritura del método equals()
+    public boolean equals(Libro libro) {
+        if (codigo.equals(libro.codigo) && titulo.equals(libro.titulo)) {
+            return true;
+        }
+        return false;
+    }
+
+    //Sobreescritura del método toString()
+    @Override
+    public String toString() {
+        return super.toString() + " Libro ->  Código: " + codigo + " | Título: " + titulo + " | Año de publicación: " + agnoPubli + " | Prestado: " + prestado();
+    }
+    
     
 }

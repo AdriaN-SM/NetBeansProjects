@@ -13,13 +13,18 @@ public class Publicacion {
     
     String codigo;
     String titulo;
-    int añoPubli;
+    int agnoPubli;
 
     //Constructor con todos los atributos
-    public Publicacion(String codigo, String titulo, int añoPubli) {
+    public Publicacion(String codigo, String titulo, int agnoPubli) {
         this.codigo = codigo;
         this.titulo = titulo;
-        this.añoPubli = añoPubli;
+        this.agnoPubli = agnoPubli;
     }
-        
+
+    @Override
+    public String toString() {
+        return "Publicacion -> ";
+    }
+    
 }
