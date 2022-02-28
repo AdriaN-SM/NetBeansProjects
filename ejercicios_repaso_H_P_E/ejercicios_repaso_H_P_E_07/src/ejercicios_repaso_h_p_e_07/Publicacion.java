@@ -15,6 +15,32 @@ public class Publicacion {
     String titulo;
     int agnoPubli;
 
+    
+    //Getter y Setter
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public int getAgnoPubli() {
+        return agnoPubli;
+    }
+
+    public void setAgnoPubli(int agnoPubli) {
+        this.agnoPubli = agnoPubli;
+    }
+
     //Constructor con todos los atributos
     public Publicacion(String codigo, String titulo, int agnoPubli) {
         this.codigo = codigo;
