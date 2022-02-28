@@ -13,17 +13,24 @@ public abstract class Ave extends Mascotas {
 
     String pico;
     Boolean vuela;
-    
+
+    public Ave(String nombre, int edad, String estado, String fechaNac, 
+               String pico, Boolean vuela) {
+        super(nombre, edad, estado, fechaNac);
+        this.pico = pico;
+        this.vuela = vuela;
+    }
     
     @Override
-    public void mostrar() {
-        
-    }
+    public abstract void habla();
+    @Override
+    public abstract void mostrar();
+    public abstract void volar();
 
     @Override
-    public void habla() {
-        
+    public String toString() {
+        return "Aves: " + super.toString() + " pico: "
+                + pico + " vuela: " + vuela;
     }
     
-    public abstract void volar();
 }

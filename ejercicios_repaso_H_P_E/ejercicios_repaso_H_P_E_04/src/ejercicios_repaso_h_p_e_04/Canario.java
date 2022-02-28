@@ -11,19 +11,41 @@ package ejercicios_repaso_h_p_e_04;
  */
 public class Canario extends Ave {
 
+    String color;
+    boolean canta;
+
+    public Canario(String nombre, int edad, String estado, String fechaNac, 
+                   String pico, Boolean vuela, String color, boolean canta) {
+        super(nombre, edad, estado, fechaNac, pico, vuela);
+        this.color = color;
+        this.canta = canta;
+    }
+    
+    
+    
     @Override
     public void habla() {
-        super.habla();
+        System.out.println("PIO PIO");
     }
 
     @Override
     public void mostrar() {
-        super.mostrar();
+        System.out.println(toString());
     }
 
     @Override
     public void volar() {
-        
+        if (vuela == true) {
+            System.out.println("Puede volar");
+        }
+        else {
+            System.out.println("No puede volar");
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Canario: " + super.toString() + " color: " + color + " canta: " + canta;
     }
     
 }

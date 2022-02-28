@@ -10,23 +10,46 @@ package ejercicios_repaso_h_p_e_04;
  * @author adria
  */
 public class Perro extends Mascotas {
-
+    //Atributos
     String raza;
     Boolean pulgas;
     
     
+    //Constructor
+    public Perro(String nombre, int edad, String estado, String fechaNac,
+                 String raza, Boolean pulgas) {
+        super(nombre, edad, estado, fechaNac);
+        this.raza = raza;
+        this.pulgas = pulgas;
+        
+    }
+    //Métodos heredados
+    
     @Override
     public void mostrar() {
-        
+        System.out.println(toString());
     }
 
     @Override
     public void habla() {
-        
+        System.out.println("GUAU GUAU.");
+    }
+    //Métodos no heredados
+    public void tienePulgas() {
+        if (pulgas == true) {
+            System.out.println("El perro tiene pulgas :(");
+        }
+        else {
+            System.out.println("El perro no tiene pulgas :)");
+        }
     }
     
-    public void tienePulgas() {
-        
+    //Sobreescribit toString
+    @Override
+    public String toString() {
+        return "Perro: " + super.toString() + " raza: " + raza + " pulgas: " + pulgas;
     }
+    
+    
     
 }

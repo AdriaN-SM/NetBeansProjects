@@ -40,15 +40,15 @@ public class Ejercicios_repaso_H_P_E_03 {
                     System.out.println("El resultado de " + A + "/" + B + " es: " + (A/B));
                 }
                 catch (ArithmeticException ae) {
-                    System.out.println("No se puede dividir entre 0.");
+                    System.err.println("No se puede dividir entre 0.");
                 }
             }
             catch (InputMismatchException ime) {
-                System.out.println("Valor introducido incorrecto.");
+                System.err.println("Valor introducido incorrecto.");
             }
         }
         catch (InputMismatchException ime) {
-            System.out.println("Valor introducido incorrecto.");
+            System.err.println("Valor introducido incorrecto.");
         }
         
         
