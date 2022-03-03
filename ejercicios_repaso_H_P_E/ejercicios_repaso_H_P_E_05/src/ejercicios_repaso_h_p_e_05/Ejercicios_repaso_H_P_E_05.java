@@ -28,18 +28,21 @@ public class Ejercicios_repaso_H_P_E_05 {
         double[] arrDoubles = new double[5];
         Scanner in = new Scanner(System.in);
         
-        try {
-            for(i = 0; i < arrDoubles.length; i++) {
+        for(i = 0; i < arrDoubles.length; i++) {
+            try {
                 System.out.print("Introduce el valor nº" + (i+1) + ": ");
                 arrDoubles[i] = in.nextDouble();
             }
+            catch (InputMismatchException ime) {
+                System.err.println("El valor introducideo es incorrecto.");
+                in.nextLine();
+                i--;
+            }
+            catch (ArrayIndexOutOfBoundsException aibe) {
+                System.err.println("Has introducido demasiados valores.");
+            }
         }
-        catch (InputMismatchException ime) {
-            System.err.println("El valor introducideo es incorrecto.");
-        }
-        catch (ArrayIndexOutOfBoundsException aibe) {
-            System.err.println("Has introducido demasiados valores.");
-        }
+        
         
     }
     
