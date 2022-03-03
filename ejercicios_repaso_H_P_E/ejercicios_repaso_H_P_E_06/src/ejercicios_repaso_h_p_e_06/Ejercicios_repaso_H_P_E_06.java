@@ -45,7 +45,6 @@ public class Ejercicios_repaso_H_P_E_06 {
                 System.err.println("El número está fuera del rango del array");
                 System.out.println("La longitud del array es " + (arrEnteros.length-1));
             }
-            
         }while(valor >= 0);
     }
 
