@@ -37,6 +37,9 @@ public class Ejercicios_repaso_H_P_E_05 {
         catch (InputMismatchException ime) {
             System.err.println("El valor introducideo es incorrecto.");
         }
+        catch (ArrayIndexOutOfBoundsException aibe) {
+            System.err.println("Has introducido demasiados valores.");
+        }
         
     }
     
