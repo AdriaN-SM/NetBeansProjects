@@ -40,7 +40,6 @@ public class Ejercicios_repaso_H_P_repaso2_02 {
         arrEmpleados[5] = t3;
         
         
-        
         System.out.println("Los objetos son los siguientes:");
         for (int i = 0; i<arrEmpleados.length; i++) {
             System.out.println((i+1) + ". " + arrEmpleados[i].toString());
@@ -50,17 +49,20 @@ public class Ejercicios_repaso_H_P_repaso2_02 {
         System.out.print("\n¿El empleado 1 y el 2 son iguales? " + c1.equals(c2) + "\n");
         
         c2.setComision(4);
+        
         if (c2.plus(2)) {
             System.out.println("El empleado " + c2.getNombre() + " tiene un aumento");
         }
         else {
             System.out.println("El empleado " + c2.getNombre() + " no tiene aumento");
         }
+        
         System.out.println("-------------------------------------------------------------------------");
         System.out.println("Los objetos modificados:");
         for (int i = 0; i<arrEmpleados.length; i++) {
             System.out.println((i+1) + ". " + arrEmpleados[i].toString());
         }
+        
         System.out.println("\nPrograma finalizado...");
         
     }
