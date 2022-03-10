@@ -46,7 +46,7 @@ public class Comercial extends Empleado {
     //Sobrecarga del toString()
     @Override
     public String toString() {
-        return super.toString() + " Comision: " + comision;
+        return super.toString() + " | Comision: " + comision;
     }
     
     
