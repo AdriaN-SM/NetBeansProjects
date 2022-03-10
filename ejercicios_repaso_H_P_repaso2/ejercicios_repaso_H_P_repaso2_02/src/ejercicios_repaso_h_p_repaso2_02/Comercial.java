@@ -20,7 +20,7 @@ public class Comercial extends Empleado {
     }
 
     //Constructor con todos los atribtos
-    public Comercial(int salario, String nombre, String apellido, int edad, double comision) {
+    public Comercial(double salario, String nombre, String apellido, int edad, double comision) {
         super(salario, nombre, apellido, edad);
         this.comision = comision;
     }
@@ -43,10 +43,10 @@ public class Comercial extends Empleado {
         return false;
     }
 
-    //Sobre
+    //Sobrecarga del toString()
     @Override
     public String toString() {
-        return super.toString() + "Comercial{" + "comision=" + comision + '}';
+        return super.toString() + " Comision: " + comision;
     }
     
     
