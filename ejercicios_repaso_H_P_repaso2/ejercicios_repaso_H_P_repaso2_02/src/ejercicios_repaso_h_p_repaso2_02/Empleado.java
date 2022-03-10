@@ -72,8 +72,8 @@ public abstract class Empleado {
     //Sobrecarga del método toString()
     @Override
     public String toString() {
-        return "Nombre" + nombre + " Apellido: " + apellido + " Edad: " + edad + 
-               " Salario: " + salario;
+        return "Nombre: " + nombre + " | Apellido: " + apellido + " | Edad: " + edad + 
+               " | Salario: " + salario;
     }
     
     //Sobrecarga del método equals()
