@@ -11,7 +11,7 @@ package ejercicios_repaso_h_p_repaso2_02;
  */
 public abstract class Empleado {
     
-    int salario;
+    double salario;
     String nombre;
     String apellido;
     int edad;
@@ -19,11 +19,14 @@ public abstract class Empleado {
 
     //Constructor por defecto
     public Empleado() {
+        this.nombre = "";
+        this.apellido = "";
+        this.edad = 0;
         this.salario = SALARIO_DEFECTO;
     }
 
     //Constructor con todos los atributos
-    public Empleado(int salario, String nombre, String apellido, int edad) {
+    public Empleado(double salario, String nombre, String apellido, int edad) {
         this.salario = salario;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -31,11 +34,11 @@ public abstract class Empleado {
     }
     
     //Getter y Setter
-    public int getSalario() {
+    public double getSalario() {
         return salario;
     }
 
-    public void setSalario(int salario) {
+    public void setSalario(double salario) {
         this.salario = salario;
     }
 
@@ -69,7 +72,8 @@ public abstract class Empleado {
     //Sobrecarga del método toString()
     @Override
     public String toString() {
-        return "Empleado{" + "salario=" + salario + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + '}';
+        return "Nombre" + nombre + " Apellido: " + apellido + " Edad: " + edad + 
+               " Salario: " + salario;
     }
     
     //Sobrecarga del método equals()
