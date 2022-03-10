@@ -42,5 +42,11 @@ public class Tecnico extends Empleado {
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " | Productividad: " + productividad;
+    }
+    
     
 }
