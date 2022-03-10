@@ -20,7 +20,7 @@ public class Tecnico extends Empleado {
     }
 
     //Constructor con todos los atributos
-    public Tecnico(int salario, String nombre, String apellido, int edad, double productividad) {
+    public Tecnico(double salario, String nombre, String apellido, int edad, double productividad) {
         super(salario, nombre, apellido, edad);
         this.productividad = productividad;
     }
