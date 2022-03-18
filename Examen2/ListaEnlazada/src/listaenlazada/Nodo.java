@@ -13,9 +13,9 @@ public class Nodo {
     int dato;
     Nodo siguienteNodo;
     
-    public Nodo(int numero) {
+    public Nodo(int numero, Nodo sigNodo) {
         this.dato = numero;
-        this.siguienteNodo = null;
+        this.siguienteNodo = sigNodo;
     }
 
     public int getDato() {

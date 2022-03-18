@@ -24,8 +24,24 @@ public class ListaEnlazada {
         
         Lista lista = new Lista();
         
+        lista.insertarFinal(1);
+        lista.insertarFinal(2);
+        lista.insertarFinal(4);
+        lista.insertarFinal(5);
+//        lista.insertarPrincipio(2);
+//        lista.insertarPrincipio(1);
         
         
+//        lista.listar();
+//        
+//        lista.borrar(3);
+//        System.out.println("**************");
+        
+        lista.listar();
+        
+        lista.insertarMedio(2, 3);
+        System.out.println("**************");
+        lista.listar();
     }
 
 }
