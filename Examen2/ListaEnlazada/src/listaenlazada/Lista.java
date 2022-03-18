@@ -11,31 +11,76 @@ package listaenlazada;
  */
 public class Lista {
     int numNodos;
-    Nodo nodo;
+    Nodo primero;
     
     public Lista() {
         this.numNodos = 0;
-        this.nodo = null;
+        this.primero = null;
     }
-
-    public int getNumNodos() {
-        return numNodos;
+    
+    public void insertarPrincipio(int dato) {
+        Nodo nuevoNodo = new Nodo(dato, primero);
+        primero = nuevoNodo;
+        numNodos++;
     }
-
-    public void setNumNodos(int numNodos) {
-        this.numNodos = numNodos;
-    }
-
-    public Nodo getNodo() {
-        return nodo;
-    }
-
-    public void setNodo(Nodo nodo) {
-        this.nodo = nodo;
+    
+    public void insertarMedio(int elemento1, int dato) {
+        Nodo actual = primero;
+        while (actual.getSiguienteNodo() != null && actual.getDato() != elemento1) {
+            actual = actual.getSiguienteNodo();
+        }
+        Nodo nuevoNodo = new Nodo(dato, actual.getSiguienteNodo());
+        actual.setSiguienteNodo(nuevoNodo);
     }
     
     public void insertarFinal(int dato) {
-        Nodo n = new Nodo(dato);
-        
+        Nodo nuevoNodo = new Nodo(dato, null);
+        if (primero == null) {
+            primero = nuevoNodo;
+        }
+        else {
+            Nodo actual = primero;
+            while (actual.getSiguienteNodo() != null) {
+                actual = actual.getSiguienteNodo();
+            }
+            actual.setSiguienteNodo(nuevoNodo);
+            numNodos++;
+        }
+    }
+    
+    public void listar(){
+
+        Nodo actual = primero;
+        while (actual.getSiguienteNodo() != null){
+            System.out.println(actual.getDato());
+            actual = actual.getSiguienteNodo();
+
+        }
+        System.out.println(actual.getDato());
+    }
+    
+    public void borrar(int elemento) {
+        if (primero == null) {
+            System.out.println("La lista está vacía.");
+        }
+        else {
+            if (primero.getDato() == elemento) {
+                primero = primero.getSiguienteNodo();
+                numNodos--;
+            }
+            else {
+                Nodo actual = primero;
+                while (actual.getSiguienteNodo() != null && actual.getSiguienteNodo().getDato() != elemento) {
+                    actual = actual.getSiguienteNodo();
+                }
+                if (actual.getSiguienteNodo() == null) {
+                    System.out.println("El elemento " + elemento + " no está en la lista.");
+                }
+                else {
+                    actual.setSiguienteNodo(actual.getSiguienteNodo().getSiguienteNodo());
+                    numNodos--;
+                }
+            }
+        }
     }
 }
