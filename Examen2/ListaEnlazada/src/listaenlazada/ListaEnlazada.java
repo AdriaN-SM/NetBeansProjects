@@ -23,6 +23,7 @@ public class ListaEnlazada {
         // TODO code application logic here
         
         Lista lista = new Lista();
+        Lista personas = new Lista();
         
         lista.insertarFinal(1);
         lista.insertarFinal(2);
@@ -30,12 +31,17 @@ public class ListaEnlazada {
         lista.insertarFinal(5);
 //        lista.insertarPrincipio(2);
 //        lista.insertarPrincipio(1);
+        personas.insertarFinal(new Persona("Alvaro", 48, 15));
+        personas.insertarFinal(new Persona("Alberto", 21, 185));
+        personas.insertarFinal(new Persona("Adrián", 20, 180));
+        personas.insertarFinal(new Persona("Alejandro", 11, 157));
         
-        
-//        lista.listar();
+        lista.listar();
+        System.out.println("**************");
+        personas.listar();
 //        
 //        lista.borrar(3);
-//        System.out.println("**************");
+        System.out.println("**************");
         
         lista.listar();
         

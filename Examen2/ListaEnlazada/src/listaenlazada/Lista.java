@@ -7,7 +7,7 @@ package listaenlazada;
 
 /**
  *
- * @author adria
+ * @author Adrian Solanas
  */
 public class Lista {
     int numNodos;
@@ -18,13 +18,13 @@ public class Lista {
         this.primero = null;
     }
     
-    public void insertarPrincipio(int dato) {
+    public void insertarPrincipio(Object dato) {
         Nodo nuevoNodo = new Nodo(dato, primero);
         primero = nuevoNodo;
         numNodos++;
     }
     
-    public void insertarMedio(int elemento1, int dato) {
+    public void insertarMedio(Object elemento1, Object dato) {
         Nodo actual = primero;
         while (actual.getSiguienteNodo() != null && actual.getDato() != elemento1) {
             actual = actual.getSiguienteNodo();
@@ -33,7 +33,7 @@ public class Lista {
         actual.setSiguienteNodo(nuevoNodo);
     }
     
-    public void insertarFinal(int dato) {
+    public void insertarFinal(Object dato) {
         Nodo nuevoNodo = new Nodo(dato, null);
         if (primero == null) {
             primero = nuevoNodo;
@@ -59,7 +59,7 @@ public class Lista {
         System.out.println(actual.getDato());
     }
     
-    public void borrar(int elemento) {
+    public void borrar(Object elemento) {
         if (primero == null) {
             System.out.println("La lista está vacía.");
         }

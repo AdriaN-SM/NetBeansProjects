@@ -10,15 +10,15 @@ package listaenlazada;
  * @author Adrian Solanas
  */
 public class Nodo {
-    int dato;
+    Object dato;
     Nodo siguienteNodo;
     
-    public Nodo(int numero, Nodo sigNodo) {
+    public Nodo(Object numero, Nodo sigNodo) {
         this.dato = numero;
         this.siguienteNodo = sigNodo;
     }
 
-    public int getDato() {
+    public Object getDato() {
         return dato;
     }
 
