@@ -25,7 +25,7 @@ public class Ejercicios_colecciones_01 {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Producto p1 = new Producto("Manzana", 15);
+        Producto p1 = new Producto("Manzana", 15); 
         Producto p2 = new Producto("Pera", 25);
         Producto p3 = new Producto("Melón", 55);
         Producto p4 = new Producto("Cereza", 5);
@@ -39,24 +39,34 @@ public class Ejercicios_colecciones_01 {
         listaProd.add(p4);
         listaProd.add(p5);
         
-//        Iterator it = listaProd.iterator();
-//        while (it.hasNext()) {
-//            System.out.println(it.next());
-//        }
+        visualizar(listaProd);
+        System.out.println("******************************");
+        System.out.println("Eliminamos el producto nº 2 y 3");
+        listaProd.remove(1);
+        listaProd.remove(2);
         
         visualizar(listaProd);
+        System.out.println("******************************");
+        System.out.println("Añadumos un producto a la posición 3");
+        listaProd.add(2, p1);
         
-        listaProd.remove(2);
-        listaProd.remove(3);
-        
-        
+        visualizar(listaProd);
+        System.out.println("******************************");
+        listaProd.clear();
+        visualizar(listaProd);
     }
     
     public static void visualizar(ArrayList listaProd) {
         int i=1;
-        for (Iterator<Producto> it = listaProd.iterator(); it.hasNext(); i++) {
+        Iterator it = listaProd.iterator();
+        System.out.println("La lista tiene " + listaProd.size() + " elementos.");
+        while (it.hasNext()) {
             System.out.println(i + ". " + it.next());
+            i++;
         }
+//        for (Iterator<Producto> it = listaProd.iterator(); it.hasNext(); i++) {
+//            System.out.println(i + ". " + it.next());
+//        }
     }
     
 }
