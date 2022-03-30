@@ -31,16 +31,33 @@ public class Ejercicios_colecciones_02 {
         figuras.add(new Triangulo(10.3, 12, 12, 10));
         figuras.add(new Rectangulo(13.6, 33.9));
         
-        System.out.println("FIGURAS INICIALES");
+        System.out.println("/////////////////////////");
+        System.out.println("//  FIGURAS INICIALES  //");
+        System.out.println("/////////////////////////");
+        imprimir(figuras);
+        
+        escala(figuras, 2);
+        System.out.println("///////////////////////////////");
+        System.out.println("//  Figuras escaladas a 2.0  //");
+        System.out.println("///////////////////////////////");
+        imprimir(figuras);
+        
+    }
+    
+    public static void imprimir(ArrayList<iFigura2D> f) {
+        System.out.println("El número de figuras es: " + f.size());
         System.out.println("");
-        Iterator it = figuras.iterator();
-        int i = 0;
-        while (i < figuras.size()) {
-            //System.out.println(i + ". " + it.next());
-            figuras.get(i).imprimir();
+        Iterator<iFigura2D> it = f.iterator();
+        while(it.hasNext()) {
+            it.next().imprimir();
             System.out.println("****************************");
-            figuras.get(i).escalar(2);
-            i++;
+        }
+    }
+    
+    public static void escala(ArrayList<iFigura2D> f, double escala) {
+        Iterator<iFigura2D> it = f.iterator();
+        while(it.hasNext()) {
+            it.next().escalar(escala);
         }
     }
 
