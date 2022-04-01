@@ -22,8 +22,19 @@ public class Ejercicios_colecciones_03 {
     public static void main(String[] args) {
         // TODO code application logic here
         
+        Inventario inv = new Inventario();
         
+        inv.insertarAnimal(new Perro("Tobey", 3, "Durmiendo", "01/04/2019", "Labrador", false));
+        inv.insertarAnimal(new Loro("Lorichu", 1, "Volando", "01/01/2021", "Azul", true, "Desconocido", true));
+        inv.insertarAnimal(new Perro("Riley", 2, "Jugando", "15/12/2020", "Pastor Alemán", false));
         
+        inv.mostrarListaAnimales2();
+        
+        System.out.println("***************************************************************");
+        inv.mostrarUnAnimal(0);
+        System.out.println("***************************************************************");
+        inv.mostrarTodosAnimales2();
+        System.out.println("\nPrograma finalizado...");
     }
 
 }
