@@ -101,9 +101,9 @@ public class Ejercicios_colecciones_map_01 {
             System.out.println("El mapa contiene elementos");
         System.out.println("Elementos 6, 7 y 3");
         System.out.println(map2.get(6) + "\n" + map2.get(7) + "\n" + map2.get(3));
-        System.out.println("Borramos el elemento con clave 18" + map2.remove(18));
+        System.out.println("Borramos el elemento con clave 18: " + map2.remove(18));
         System.out.println("Comprobamos que pasa si llamamos al elemento que "
-                + "acabamos de borrar (18)" + map2.get(18));
+                + "acabamos de borrar (18): " + map2.get(18));
         System.out.println("Comprobamos si existe un eleento con clave 18: " 
                 + map2.containsKey(18));
         System.out.println("Comprobamos si existe un eleento con clave 1: " 
