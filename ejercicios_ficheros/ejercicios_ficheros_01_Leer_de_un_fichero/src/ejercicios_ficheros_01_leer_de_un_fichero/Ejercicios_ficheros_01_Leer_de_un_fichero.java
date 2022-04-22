@@ -30,25 +30,20 @@ public class Ejercicios_ficheros_01_Leer_de_un_fichero {
         
         File archivo = null;
         FileReader fr = null;
-        BufferedReader br = null;
 
         try {
-           // Apertura del fichero y creacion de BufferedReader para poder
-           // hacer una lectura comoda (disponer del metodo readLine()).
-
             archivo = new File (".\\Ejercicio1.txt");
             fr = new FileReader (archivo);
-            //br = new BufferedReader(fr);
             int caracter;
             if(archivo.exists()){
-                String linea;
                 while((caracter=fr.read())!=-1)
-                System.out.print((char)caracter); 
+                if (caracter != ' ') {
+                    System.out.print((char)caracter);
+                }
             }else{
                 System.out.println("EL FICHERO NO EXISTE ANIMAL");
             }
-            // Lectura del fichero
-
+            System.out.println("");
         }
         catch(FileNotFoundException filenot){
             System.err.println("El fichero no existe");
