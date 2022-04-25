@@ -7,6 +7,9 @@
 package ejercicios_ficheros_03_escribir_y_leer_en_un_fichero;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -42,7 +45,6 @@ public class Ejercicios_ficheros_03_Escribir_y_leer_en_un_fichero {
             opcion = teclado();
             menu(opcion);
         }while(opcion != "3");
-        
     }
     
     public static String teclado() throws IOException {
@@ -53,43 +55,81 @@ public class Ejercicios_ficheros_03_Escribir_y_leer_en_un_fichero {
     public static void menu(String opcion) throws IOException {
         switch(opcion) {
             case "1":
-                FileWriter fw = null;
-                PrintWriter pw = null;
-                try {
-                    System.out.print("Introduce el nombre del fichero de texto:");
-                    String fichero = teclado();
-                    fw = new FileWriter("./"+fichero);
-                    System.out.print("Introduce tu Nombre: ");
-                    String nombre = teclado();
-                    pw = new PrintWriter(fw);
-                    pw.println("Nombre: " + nombre);
-                    System.out.print("Introduce tus Apellidos: ");
-                    String apellidos = teclado();
-                    pw.println("Apellidos: " + apellidos);
-                    System.out.print("Introduce tu Ciudad de Nacimiento: ");
-                    String ciudad = teclado();
-                    pw.println("Ciudad de Nacimiento: " + ciudad);
-                }catch(Exception e) {
-                    e.printStackTrace();
-                }finally {
-                    try{                    
-                        if( null != fw ){   
-                           fw.close();
-                        }                  
-                    }catch (Exception e2){ 
-                        e2.printStackTrace();
-                    }
-                }
-                
-                
+                escribirFichero();
                 break;
             case "2":
+                leerFichero();
                 break;
             default:
                 System.out.println("Cerrando el programa...");
+                System.exit(0);
                 break;
         }
     }
     
+    public static void escribirFichero () {
+        FileWriter fw = null;
+        PrintWriter pw = null;
+        String fichero = null;
+        try {
+            System.out.print("Introduce el nombre del fichero de texto:");
+            fichero = teclado();
+            fw = new FileWriter("./"+fichero);
+            System.out.print("Introduce tu Nombre: ");
+            String nombre = teclado();
+            pw = new PrintWriter(fw);
+            pw.println("Nombre: " + nombre);
+            System.out.print("Introduce tus Apellidos: ");
+            String apellidos = teclado();
+            pw.println("Apellidos: " + apellidos);
+            System.out.print("Introduce tu Ciudad de Nacimiento: ");
+            String ciudad = teclado();
+            pw.println("Ciudad de Nacimiento: " + ciudad);
+            
+        }catch(Exception e) {
+            e.printStackTrace();
+        }finally {
+            try{                    
+                if( null != fw ){   
+                   fw.close();
+                }                  
+            }catch (Exception e2){ 
+                e2.printStackTrace();
+            }
+        }
+    }
+    public static void leerFichero() throws IOException {
+        System.out.print("Introduce el nombre del fichero que deseas leer: ");
+        String fichero = teclado();
+        File archivo = archivo = new File (fichero);
+        FileReader fr = null;
+        try {
+
+            fr = new FileReader (archivo);
+            int caracter;
+            if(archivo.exists()){
+                while((caracter=fr.read())!=-1)
+                System.out.print((char)caracter);
+            }else{
+                System.out.println("EL FICHERO NO EXISTE ANIMAL");
+            }
+            System.out.println("");
+        }
+        catch(FileNotFoundException filenot){
+            System.err.println("El fichero no existe");
+
+        }finally{
+            // En el finally cerramos el fichero, para asegurarnos
+            // que se cierra tanto si todo va bien como si salta 
+            // una excepcion.
+            try{                    
+                if( null != fr ){   
+                   fr.close();     
+                }                  
+            }catch (Exception e2){ 
+                e2.printStackTrace();
+            }
+        }
+    }
     
 }
