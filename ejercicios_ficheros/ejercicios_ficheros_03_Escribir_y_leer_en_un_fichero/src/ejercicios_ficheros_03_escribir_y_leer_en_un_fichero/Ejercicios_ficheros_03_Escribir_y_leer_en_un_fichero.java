@@ -44,7 +44,7 @@ public class Ejercicios_ficheros_03_Escribir_y_leer_en_un_fichero {
             System.out.print("Opción: ");
             opcion = teclado();
             menu(opcion);
-        }while(opcion != "3");
+        }while(opcion.equals("3")== false);
     }
     
     public static String teclado() throws IOException {
@@ -63,7 +63,6 @@ public class Ejercicios_ficheros_03_Escribir_y_leer_en_un_fichero {
             default:
                 System.out.println("Cerrando el programa...");
                 System.exit(0);
-                break;
         }
     }
     
