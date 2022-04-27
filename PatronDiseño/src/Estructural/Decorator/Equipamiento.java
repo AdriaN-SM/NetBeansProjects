@@ -34,7 +34,8 @@ public abstract class Equipamiento extends Tropa {
         } else if (tropa.equals(toRemove)) {
             tropa = toRemove.tropa;
         } else {
-            removeDecorator(toRemove);
+            Equipamiento t = (Equipamiento) tropa;
+            t.removeDecorator(toRemove);
         }
     }
 
