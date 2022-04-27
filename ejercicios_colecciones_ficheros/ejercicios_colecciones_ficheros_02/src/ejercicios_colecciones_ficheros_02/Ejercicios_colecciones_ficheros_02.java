@@ -45,6 +45,7 @@ public class Ejercicios_colecciones_ficheros_02 {
         arrCoches.add(c4);
         arrCoches.add(c5);
         
+        //Escribir los objetos en el fichero
         ObjectOutputStream fichEscribir = null;
         try {
             FileOutputStream fos = new FileOutputStream("./coches.txt");
@@ -65,7 +66,7 @@ public class Ejercicios_colecciones_ficheros_02 {
                 System.err.println("Error al cerra el fichero: " + ex.getMessage());
             }
         }
-        
+        //Leer los objetos del fichero
         ObjectInputStream fichLeer = null;
         try {
             boolean hayDatos = true;
