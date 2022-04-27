@@ -56,13 +56,15 @@ public class Ejercicios_ficheros_04 {
         //LEER EL FICHERO
         File archivo = archivo = new File ("./"+fichero+".txt");
         FileReader fr = null;
+        BufferedReader br = null;
         try {
 
             fr = new FileReader (archivo);
-            int caracter;
+            br = new BufferedReader(fr);
             if(archivo.exists()){
-                while((caracter=fr.read())!=-1) {
-                    System.out.print((char)caracter);
+                String linea;
+                while((linea=br.readLine())!=null) {
+                    System.out.print(cambioMayusMinus(linea));
                 }
             }else{
                 System.out.println("EL FICHERO NO EXISTE ANIMAL");
@@ -79,7 +81,8 @@ public class Ejercicios_ficheros_04 {
             try{                    
                 if( null != fr ){   
                    fr.close();     
-                }                  
+                }
+                br.close();
             }catch (Exception e2){ 
                 e2.printStackTrace();
             }
@@ -92,4 +95,21 @@ public class Ejercicios_ficheros_04 {
         return br.readLine();
     }
 
+    public static String cambioMayusMinus(String texto){
+        
+        String cadena = "";
+        
+        for(int i = 0; i < texto.length(); i++){
+            
+            char caracter = texto.charAt(i);
+            if(caracter == Character.toLowerCase(caracter)){
+                caracter = Character.toUpperCase(caracter);
+            }else{
+                caracter = Character.toLowerCase(caracter);
+            }
+            
+            cadena = cadena + caracter;
+        }
+        return cadena;
+    }
 }
