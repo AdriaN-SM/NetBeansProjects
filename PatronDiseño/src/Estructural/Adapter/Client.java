@@ -5,13 +5,17 @@ public class Client {
 
     public static void main(String[] args) {
         
-        Adaptee adaptee = new Adaptee();
-        Adapter adapter = new Adapter(adaptee);
-
-      //  adaptee.methodSuplantar();
+        Robot robot = new Robot();
+        robot.setCreacion(23);
+        robot.setIdentificacion("JJ Agustin");
+        System.out.println(robot);
         
-        adapter.originalMethod();
-       // adapter.method2();
+        AdapterHumano adapter = new AdapterHumano(new Robot());
+
+        adapter.setEdad(23);
+        adapter.setNombre("JJ Agustin");
+        System.out.println(adapter);
+
     }
 
 }

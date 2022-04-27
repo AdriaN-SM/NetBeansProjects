@@ -2,7 +2,7 @@
 package Creacion.Builder;
 
 /**
- * Instancia a un objeto con una serie de parametros
+ * Instancia a un objeto con una serie de parametros predefinidos
  * 
  * https://es.wikipedia.org/wiki/Builder_(patr%C3%B3n_de_dise%C3%B1o)
  * https://migranitodejava.blogspot.com/search/label/Builder

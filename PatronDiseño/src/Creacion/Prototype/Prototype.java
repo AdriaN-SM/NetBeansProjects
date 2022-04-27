@@ -3,7 +3,7 @@ package Creacion.Prototype;
 /**
  * 
  * Se usa cuando el tipo de las instancias se define en tiempo de ejecucion 
- * y el coste de instanciacion es muy costoso
+ * y el coste de instanciacion es muy costoso, por lo que es mas eficiente clonarlo
  * Uses:
  * https://es.wikipedia.org/wiki/Prototipo_(patr%C3%B3n_de_dise%C3%B1o)
  * https://refactoring.guru/design-patterns/prototype/java/example
