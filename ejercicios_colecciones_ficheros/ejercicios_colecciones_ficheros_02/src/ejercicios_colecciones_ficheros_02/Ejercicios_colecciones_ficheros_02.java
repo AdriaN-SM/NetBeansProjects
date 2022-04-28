@@ -21,7 +21,7 @@ import java.util.List;
  *
  *
  * @since 27.04.2022
- * Fecha de modificación: 27.04.2022
+ * Fecha de modificación: 28.04.2022
  * @author Adrian Solanas
  */
 public class Ejercicios_colecciones_ficheros_02 {
@@ -47,8 +47,9 @@ public class Ejercicios_colecciones_ficheros_02 {
         
         //Escribir los objetos en el fichero
         ObjectOutputStream fichEscribir = null;
+        FileOutputStream fos = null;
         try {
-            FileOutputStream fos = new FileOutputStream("./coches.txt");
+            fos = new FileOutputStream("./coches.txt");
             fichEscribir = new ObjectOutputStream(fos);
             for (int i = 0; i<arrCoches.size(); i++) {
                 fichEscribir.writeObject(arrCoches.get(i));
@@ -59,8 +60,9 @@ public class Ejercicios_colecciones_ficheros_02 {
             System.err.println("Error E/S: " + ioe.getMessage());
         }finally {
             try {
-                if (fichEscribir != null) {
+                if (fos != null) {
                     fichEscribir.close();
+                    fos.close();
                 }
             }catch(IOException ex) {
                 System.err.println("Error al cerra el fichero: " + ex.getMessage());
@@ -78,10 +80,10 @@ public class Ejercicios_colecciones_ficheros_02 {
                     coche = (Coche) fichLeer.readObject();
                     System.out.println(coche);
                 }catch(EOFException e) {
-                    hayDatos = false; //Para salir del bucle
+                    hayDatos = false; //Para salir del bucle usamos la excepcion "EndOfFile"
                 }
             }
-            System.out.println("\nFichero recorrideo completamente");
+            System.out.println("\nFichero recorride completamente");
         }catch(ClassNotFoundException e) {
             System.err.println(e.getMessage());
         }catch(IOException e) {
