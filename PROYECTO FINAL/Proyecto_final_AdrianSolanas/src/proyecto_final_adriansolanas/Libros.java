@@ -11,7 +11,7 @@ package proyecto_final_adriansolanas;
  */
 public class Libros {
     
-    private int isbn;
+    private String isbn;
     private String titulo;
     private String autor;
     private String materia;
@@ -30,7 +30,7 @@ public class Libros {
     public Libros() {
     }
 
-    public Libros(int isbn, String titulo, String autor, String materia) {
+    public Libros(String isbn, String titulo, String autor, String materia) {
         this.isbn = isbn;
         this.titulo = titulo;
         this.autor = autor;
