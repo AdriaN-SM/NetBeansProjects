@@ -6,8 +6,7 @@
 
 package proyecto_final_adriansolanas;
 
-import java.nio.charset.Charset;
-import java.util.Random;
+import java.util.Stack;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -25,55 +24,17 @@ public class Proyecto_final_AdrianSolanas {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
-        System.out.println(cadenaAleatoria());
-    }
-    
-    public static String cadenaAleatoria() {
-        // El banco de caracteres
-        String banco = "1234567890";
-        // La cadena en donde iremos agregando un carácter aleatorio
-        String cadena = "";
-        for (int x = 0; x < 13; x++) {
-            int indiceAleatorio = numeroAleatorioEnRango(0, banco.length() - 1);
-            char caracterAleatorio = banco.charAt(indiceAleatorio);
-            cadena += caracterAleatorio;
+        Isbn pos;
+        int nIsbns = 10;
+        Stack<Isbn> almacenIsbns = new Stack<>();
+        for (int i = 0; i < nIsbns; i++) {
+            pos = new Isbn();
+            while(almacenIsbns.contains(pos)) {
+                pos = new Isbn();
+            }
+            almacenIsbns.push(pos);
         }
-        return cadena;
-    }
-
-    public static int numeroAleatorioEnRango(int minimo, int maximo) {
-        // nextInt regresa en rango pero con límite superior exclusivo, por eso sumamos 1
-        return ThreadLocalRandom.current().nextInt(minimo, maximo + 1);
-    }
-    
-    public static String obtenerNumeroTreceDigitos() {
-        byte[] bytearray;
-        String mystring;
-        StringBuffer thebuffer;
-        int i = 13;
-
-        bytearray = new byte[256]; 
-        new Random().nextBytes(bytearray); 
-
-        mystring = new String(bytearray, Charset.forName("UTF-8")); 
-
-        // Create the StringBuffer
-        thebuffer = new StringBuffer(); 
-
-        for (int m = 0; m < mystring.length(); m++) { 
-
-            char n = mystring.charAt(m); 
-
-            if ((n >= '0' && n <= '9')&& (i > 0)) { 
-
-                thebuffer.append(n); 
-                i--; 
-            } 
-        } 
-
-        // resulting string 
-        return thebuffer.toString(); 
+        System.out.println(almacenIsbns.toString());
     }
     
     public static void menu() {
