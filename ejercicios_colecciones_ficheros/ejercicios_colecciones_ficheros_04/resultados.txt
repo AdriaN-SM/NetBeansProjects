@@ -1,0 +1,7 @@
+El elemento nº1 es igual en las dos listas.
+El elemento nº2 es igual en las dos listas.
+El elemento nº3 es igual en las dos listas.
+El elemento nº4 es igual en las dos listas.
+El elemento nº5 es igual en las dos listas.
+Total de elementos iguales: 5
+Total de elementos diferentes: 0
