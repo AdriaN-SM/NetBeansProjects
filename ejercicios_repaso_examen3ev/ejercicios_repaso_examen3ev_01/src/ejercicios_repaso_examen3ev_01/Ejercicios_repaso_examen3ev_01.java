@@ -41,20 +41,25 @@ public class Ejercicios_repaso_examen3ev_01 {
         listaPeliculas.add(p4);
         listaPeliculas.add(p5);
         
-//        for (int i = 0; i<listaPeliculas.size(); i++) {
-//            
-//        }
-        
-        System.out.println(listaPeliculas);
+        System.out.println("Lista inicial:");
+        for (int i = 0; i<listaPeliculas.size(); i++) {
+            System.out.println(listaPeliculas.get(i));
+        }
         
         Comparator<Pelicula> tituloComparador = new ComparadorTitulo();
         Comparator<Pelicula> directorComparador = Comparator.comparing(Pelicula::getDirector);
         Collections.sort(listaPeliculas, tituloComparador);
         System.out.println("");
-        System.out.println(listaPeliculas);
+        System.out.println("Lista ordenada por Titulo:");
+        for (int i = 0; i<listaPeliculas.size(); i++) {
+            System.out.println(listaPeliculas.get(i));
+        }
         System.out.println("");
+        System.out.println("Lista ordenada por Director:");
         Collections.sort(listaPeliculas, directorComparador);
-        System.out.println(listaPeliculas);
+        for (int i = 0; i<listaPeliculas.size(); i++) {
+            System.out.println(listaPeliculas.get(i));
+        }
         
     }
 
