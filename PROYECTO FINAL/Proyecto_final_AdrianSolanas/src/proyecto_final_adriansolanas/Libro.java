@@ -9,14 +9,14 @@ package proyecto_final_adriansolanas;
  *
  * @author adria
  */
-public class Libros {
+public class Libro {
     
-    private String isbn;
+    private Isbn isbn;
     private String titulo;
     private String autor;
     private String materia;
     
-    private String[] arrMaterias = 
+    private static String[] arrMaterias = 
     {"Ciencia", 
     "Ocio", 
     "Literatura", 
@@ -27,16 +27,11 @@ public class Libros {
     "Política", 
     "Sociedad"};
 
-    public Libros() {
-    }
-
-    public Libros(String isbn, String titulo, String autor, String materia) {
-        this.isbn = isbn;
+    public Libro(String titulo, String autor, int materia) {
+        this.isbn = new Isbn();
         this.titulo = titulo;
         this.autor = autor;
-        this.materia = materia;
+        this.materia = arrMaterias[materia-1];
     }
-    
-    
     
 }

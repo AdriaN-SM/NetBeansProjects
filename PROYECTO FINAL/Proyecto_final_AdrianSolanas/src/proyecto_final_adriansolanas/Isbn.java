@@ -5,6 +5,8 @@
  */
 package proyecto_final_adriansolanas;
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -13,9 +15,11 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class Isbn {
     private String isbn;
+    
+    public static Set<String> isbnGenerados = new HashSet<>();
 
     protected Isbn() {
-        this.isbn = generarISBN();
+        this.isbn = isbnSinRepetir();
     }
     
     private static String generarISBN() {
@@ -29,6 +33,19 @@ public class Isbn {
             cadena += caracterAleatorio;
         }
         return cadena;
+    }
+    private static String isbnSinRepetir() {
+        String aleatorio = "";
+        boolean generado = false;
+        while(!generado) {
+            String posible = generarISBN();
+            if (!isbnGenerados.contains(posible)) {
+                isbnGenerados.add(posible);
+                aleatorio = posible;
+                generado = true;
+            }
+        }
+        return aleatorio;
     }
 
     private static int numeroAleatorioEnRango(int minimo, int maximo) {

@@ -6,8 +6,12 @@
 
 package proyecto_final_adriansolanas;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -24,17 +28,16 @@ public class Proyecto_final_AdrianSolanas {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Isbn pos;
-        int nIsbns = 10;
-        Stack<Isbn> almacenIsbns = new Stack<>();
-        for (int i = 0; i < nIsbns; i++) {
-            pos = new Isbn();
-            while(almacenIsbns.contains(pos)) {
-                pos = new Isbn();
-            }
-            almacenIsbns.push(pos);
+        
+        Pattern pattern = Pattern.compile("\\d{3}-\\d{3}-\\d{3}$");
+        Matcher matcher = pattern.matcher("999-999-999");
+
+        if (matcher.matches()) {
+            System.out.println("BIEN");
         }
-        System.out.println(almacenIsbns.toString());
+        else {
+            System.out.println("MAL");
+        }
     }
     
     public static void menu() {
