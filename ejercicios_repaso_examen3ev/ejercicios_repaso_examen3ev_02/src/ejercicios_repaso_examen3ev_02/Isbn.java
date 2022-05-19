@@ -14,17 +14,17 @@ import java.io.Serializable;
 public class Isbn implements Serializable {
     
     private final String isbnCad = "ISBN";
-    private int isbnValor;
+    private String isbnValor;
 
-    public Isbn(int isbnValor) {
+    public Isbn(String isbnValor) {
         this.isbnValor = isbnValor;
     }
 
-    public int getIsbnValor() {
+    public String getIsbnValor() {
         return isbnValor;
     }
 
-    public void setIsbnValor(int isbnValor) {
+    public void setIsbnValor(String isbnValor) {
         this.isbnValor = isbnValor;
     }
 

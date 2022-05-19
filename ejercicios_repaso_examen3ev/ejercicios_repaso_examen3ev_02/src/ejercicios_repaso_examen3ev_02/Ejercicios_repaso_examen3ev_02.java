@@ -34,11 +34,11 @@ public class Ejercicios_repaso_examen3ev_02 {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Libro l1 = new Libro("Antes de volar", "Amanda Ruz", new Isbn(1));
-        Libro l2 = new Libro("Después de volar", "Amanda Ruz", new Isbn(2));
-        Libro l3 = new Libro("Piensa en java", "Rufino", new Isbn(3));
-        Libro l4 = new Libro("El niño del pijama de rallas", "Pablo", new Isbn(4));
-        Libro l5 = new Libro("Gerónimo Stilton 1", "Ratilla", new Isbn(5));
+        Libro l1 = new Libro("Antes de volar", "Amanda Ruz", new Isbn("1"));
+        Libro l2 = new Libro("Después de volar", "Amanda Ruz", new Isbn("2"));
+        Libro l3 = new Libro("Piensa en java", "Rufino", new Isbn("3"));
+        Libro l4 = new Libro("El niño del pijama de rallas", "Pablo", new Isbn("4"));
+        Libro l5 = new Libro("Gerónimo Stilton 1", "Ratilla", new Isbn("5"));
         
         List<Libro> listaLibros = new LinkedList<>();
         
@@ -48,7 +48,7 @@ public class Ejercicios_repaso_examen3ev_02 {
         listaLibros.add(l4);
         listaLibros.add(l5);
         
-        HashMap<Integer, Libro> mapLibros = new HashMap<>();
+        HashMap<String, Libro> mapLibros = new HashMap<>();
         for (int i = 0; i<listaLibros.size(); i++) {
             mapLibros.put(listaLibros.get(i).getIsbn().getIsbnValor(), listaLibros.get(i));
         }
@@ -59,9 +59,9 @@ public class Ejercicios_repaso_examen3ev_02 {
         try {
             fos = new FileOutputStream("./libros.dat");
             fichEscribir = new ObjectOutputStream(fos);
-            Iterator<Integer> it = mapLibros.keySet().iterator();
+            Iterator<String> it = mapLibros.keySet().iterator();
             while (it.hasNext()) {
-                Integer clave = it.next();
+                String clave = it.next();
                 Libro valor = mapLibros.get(clave);
                 fichEscribir.writeObject(valor);
             }
