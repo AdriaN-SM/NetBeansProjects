@@ -14,7 +14,6 @@ public class Coche extends Automovil {
     private String marca;
     private String modelo;
     
-    
     public Coche(String marca, String modelo, String tipoAutomovil) {
         super(4, tipoAutomovil);
         this.marca = marca;

@@ -21,7 +21,7 @@ public class Ejercicios_repaso_examen3ev_03 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Automovil c1 = new Coche("Seat", "Ateca", "coche");
+        Coche c1 = new Coche("Seat", "Ateca", "coche");
         c1.setNumRuedas(5);
         
     }
