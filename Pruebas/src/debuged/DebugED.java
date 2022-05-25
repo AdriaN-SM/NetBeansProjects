@@ -14,7 +14,9 @@ public class DebugED {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println(ObtenerCalificacion.obtenerCalificacion(7.5));
+        //System.out.println(ObtenerCalificacion.obtenerCalificacion(7.5));
+        
+        System.out.println("Hola Mundo!");
     }
     
 }
