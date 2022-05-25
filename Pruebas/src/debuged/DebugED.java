@@ -17,6 +17,7 @@ public class DebugED {
         //System.out.println(ObtenerCalificacion.obtenerCalificacion(7.5));
         
         System.out.println("Hola Mundo!");
+        System.out.println("test");
     }
     
 }
